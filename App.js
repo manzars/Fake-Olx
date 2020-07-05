@@ -18,10 +18,16 @@ import ViewImage from "./app/screens/ViewImage";
 import AppButton from "./app/components/AppButton";
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+import ListingsScreen from "./app/screens/ListingsScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
+import Icon from "./app/components/Icon";
+import Screen from "./app/components/Screen";
+import ListItem from "./app/components/ListItem";
 
 export default function App() {
   return (
-    <ViewImage />
+    <ListingsScreen />
     // <View
     //   style={{
     //     backgroundColor: "#f8f4f4",
