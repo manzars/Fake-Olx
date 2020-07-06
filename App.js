@@ -7,6 +7,7 @@ import {
   Platform,
   SafeAreaView,
   Dimensions,
+  TextInput,
 } from "react-native";
 import Constants from "expo-constants";
 import {
@@ -24,23 +25,21 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import Icon from "./app/components/Icon";
 import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
+import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
+
+const Categories = [
+  { label: "Furniture", value: 1 },
+  { label: "Clothings", value: 2 },
+  { label: "Cameras", value: 3 },
+];
 
 export default function App() {
   return (
-    <ListingsScreen />
-    // <View
-    //   style={{
-    //     backgroundColor: "#f8f4f4",
-    //     padding: 20,
-    //     paddingTop: 100,
-    //   }}
-    // >
-    //   <Card
-    //     title="Red Jacket"
-    //     subTitle="INR 999"
-    //     image={require("./app/assets/jacket.jpg")}
-    //   />
-    // </View>
+    <Screen>
+      <AppPicker items={Categories} placeholder="Category" icon="apps" />
+      <AppTextInput placeholder="Email" icon="email" />
+    </Screen>
   );
 }
 
