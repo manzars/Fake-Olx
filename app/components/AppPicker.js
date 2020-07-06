@@ -2,45 +2,45 @@ import React, { useState } from "react";
 import {
   View,
   StyleSheet,
-  TextInput,
   TouchableWithoutFeedback,
   Modal,
-  Button,
   FlatList,
-  TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-import defaultStyle from "../config/styles";
 import AppText from "./AppText";
-import AppTextInput from "./AppTextInput";
 import PickerItem from "./PickerItem";
 import ListItemSeperator from "./ListItemSeperator";
 
-const AppPicker = (props) => {
+const AppPicker = ({
+  icon,
+  selectedItem,
+  placeholder,
+  items,
+  onSelectItem,
+  numberOfColumns = 1,
+  PickerItemComponent = PickerItem,
+}) => {
   const [visible, setVisible] = useState(false);
-  const [category, setCategory] = useState();
-
-  const handleClick = (name) => {
-    setVisible(false);
-    setCategory(name);
-  };
 
   return (
     <React.Fragment>
       <TouchableWithoutFeedback onPress={() => setVisible(true)}>
         <View style={styles.container}>
-          {props.icon && (
+          {icon && (
             <MaterialCommunityIcons
-              name={props.icon}
+              name={icon}
               style={styles.icon}
               size={25}
               color={colors.medium}
             />
           )}
-          <AppText style={styles.text}>
-            {category ? category : props.placeholder}
-          </AppText>
+
+          {selectedItem ? (
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
           <MaterialCommunityIcons
             name="chevron-down"
             size={25}
@@ -58,13 +58,18 @@ const AppPicker = (props) => {
           />
         </View>
         <FlatList
-          data={props.items}
+          data={items}
+          numColumns={numberOfColumns}
           keyExtractor={(item) => item.value.toString()}
           ItemSeparatorComponent={ListItemSeperator}
           renderItem={({ item }) => (
-            <PickerItem
+            <PickerItemComponent
+              item={item}
               text={item.label}
-              handleClick={() => handleClick(item.label)}
+              handleClick={() => {
+                setVisible(false);
+                onSelectItem(item);
+              }}
             />
           )}
         />
@@ -91,6 +96,10 @@ const styles = StyleSheet.create({
   modalClose: {
     flexDirection: "row-reverse",
     margin: 10,
+  },
+  placeholder: {
+    flex: 1,
+    color: colors.medium,
   },
 });
 

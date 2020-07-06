@@ -98,8 +98,8 @@ const MessagesScreen = (props) => {
           setMessages([
             {
               id: 10,
-              title: "T10",
-              description: "D10",
+              title: "After Refresh",
+              description: "After refresh SubTitle",
               image: require("../assets/manzar.jpg"),
             },
           ]);

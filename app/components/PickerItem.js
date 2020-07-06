@@ -5,7 +5,7 @@ import AppText from "./AppText";
 const PickerItem = (props) => {
   return (
     <TouchableOpacity onPress={props.handleClick}>
-      <AppText style={styles.text}>{props.text}</AppText>
+      <AppText style={styles.text}>{props.item.label}</AppText>
     </TouchableOpacity>
   );
 };
