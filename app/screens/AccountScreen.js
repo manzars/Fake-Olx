@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
@@ -22,12 +22,17 @@ const menuItems = [
       name: "email",
       backgroundColor: colors.secondary,
     },
+    targetScreen: "Messages",
   },
 ];
 
 const AccountScreen = (props) => {
+  let noPadding = false;
+  if (Platform.OS === "android") {
+    noPadding = true;
+  }
   return (
-    <Screen style={styles.screen}>
+    <Screen style={styles.screen} noPadding={noPadding}>
       <View style={styles.container}>
         <ListItem
           title="Manzar Shaikh"
@@ -49,6 +54,7 @@ const AccountScreen = (props) => {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              click={() => props.navigation.navigate(item.targetScreen)}
             />
           )}
         />

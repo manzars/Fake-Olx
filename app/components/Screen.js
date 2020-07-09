@@ -4,9 +4,15 @@ import Constant from "expo-constants";
 
 const Screen = (props) => {
   return (
-    <SafeAreaView style={[styles.screen, props.style]}>
+    <SafeAreaView
+      style={[
+        styles.screen,
+        props.style,
+        props.noPadding ? styles.noPadding : null,
+      ]}
+    >
       {props.type === "listScreen" ? (
-        <View style={{ paddingTop: 20 }}>{props.children}</View>
+        <View style={styles.listScreen}>{props.children}</View>
       ) : (
         props.children
       )}
@@ -18,6 +24,12 @@ const styles = StyleSheet.create({
   screen: {
     paddingTop: Constant.statusBarHeight,
     flex: 1,
+  },
+  noPadding: {
+    paddingTop: 0,
+  },
+  listScreen: {
+    paddingTop: 20,
   },
 });
 

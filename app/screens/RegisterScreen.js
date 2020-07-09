@@ -1,57 +1,66 @@
 import React from "react";
 import { StyleSheet, Image, Platform } from "react-native";
-import Screen from "../components/Screen";
-import colors from "../config/colors";
 import * as Yup from "yup";
 
+import Screen from "../components/Screen";
+import AppForm from "../components/AppForm";
 import AppFormField from "../components/AppFormField";
 import SubmitButton from "../components/SubmitButton";
-import AppForm from "../components/AppForm";
+import colors from "../config/colors";
 
 const validationSchema = Yup.object().shape({
+  name: Yup.string().required().label("Name"),
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
-const LoginScreen = () => {
+function RegisterScreen() {
   let noPadding = false;
   if (Platform.OS === "android") {
     noPadding = true;
   }
-
   return (
     <Screen style={styles.container} noPadding={noPadding}>
       <Image source={require("../assets/logo-red.png")} style={styles.logo} />
-
       <AppForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
         <AppFormField
-          placeholder="Email"
-          icon="email"
-          name="email"
+          autoCorrect={false}
+          icon="account"
+          name="name"
+          placeholder="Name"
+        />
+        <AppFormField
           autoCapitalize="none"
+          autoCorrect={false}
+          icon="email"
           keyboardType="email-address"
+          name="email"
+          placeholder="Email"
           textContentType="emailAddress"
         />
         <AppFormField
-          placeholder="Password"
+          autoCapitalize="none"
+          autoCorrect={false}
           icon="lock"
           name="password"
-          autoCapitalize="none"
-          textContentType="password"
-          secureTextEntry={true}
+          placeholder="Password"
+          secureTextEntry
           textContentType="password"
         />
-        <SubmitButton color={colors.primary} title="Login" />
+        <SubmitButton title="Register" color={colors.primary} />
       </AppForm>
     </Screen>
   );
-};
+}
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
   logo: {
     width: 80,
     height: 80,
@@ -59,9 +68,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 20,
   },
-  container: {
-    padding: 10,
-  },
 });
 
-export default LoginScreen;
+export default RegisterScreen;

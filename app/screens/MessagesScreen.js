@@ -76,8 +76,13 @@ const MessagesScreen = (props) => {
     setMessages(messages.filter((mess) => mess.id !== message.id));
   };
 
+  let noPadding = false;
+  if (Platform.OS === "android") {
+    noPadding = true;
+  }
+
   return (
-    <Screen>
+    <Screen noPadding={noPadding}>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}

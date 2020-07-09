@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, Platform } from "react-native";
 import Card from "../components/Card";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
@@ -20,9 +20,13 @@ const listings = [
 ];
 
 const ListingsScreen = (props) => {
+  console.log(props.navigation);
+
   return (
     <Screen style={styles.screen} type="listScreen">
       <FlatList
+        style={styles.flatList}
+        showsVerticalScrollIndicator={false}
         data={listings}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
@@ -30,6 +34,9 @@ const ListingsScreen = (props) => {
             image={item.image}
             title={item.title}
             subTitle={"INR " + item.price}
+            cardPressed={() =>
+              props.navigation.navigate("ListingDetails", item)
+            }
           />
         )}
       />
@@ -39,8 +46,12 @@ const ListingsScreen = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
     backgroundColor: colors.light,
+  },
+  flatList: {
+    paddingTop: 10,
   },
 });
 
