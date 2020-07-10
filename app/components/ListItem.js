@@ -9,7 +9,12 @@ const ListItem = (props) => {
   return (
     <Swipeable renderRightActions={props.renderRightActions}>
       <TouchableHighlight onPress={props.click} underlayColor={colors.light}>
-        <View style={styles.container}>
+        <View
+          style={[
+            styles.container,
+            props.setPaddingZero ? { padding: 0 } : null,
+          ]}
+        >
           {props.IconComponent}
           {props.image && <Image style={styles.image} source={props.image} />}
           <View style={styles.innerContainer}>

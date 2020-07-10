@@ -15,6 +15,7 @@ const ListingDetailsScreen = (props) => {
         <AppText style={styles.price}>{listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem
+            setPaddingZero={true}
             title="Manzar Shaikh"
             subTitle="5 Listings"
             image={require("../assets/manzar.jpg")}
