@@ -8,7 +8,7 @@ function Card(props) {
   return (
     <TouchableOpacity onPress={props.cardPressed}>
       <View style={styles.card}>
-        <Image style={styles.image} source={props.image} />
+        <Image style={styles.image} source={{ uri: props.image }} />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{props.title}</AppText>
           <AppText style={styles.subTitle}>{props.subTitle}</AppText>

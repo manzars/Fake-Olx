@@ -1,29 +1,63 @@
-import React from "react";
-import { StyleSheet, FlatList, Platform } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, FlatList, Text } from "react-native";
 import Card from "../components/Card";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
+import ActivityIndicator from "../components/ActivityIndicator";
 
-const listings = [
+import listingApi from "../api/listings";
+
+const initialMessages = [
   {
     id: 1,
-    title: "Red Jacket",
-    price: 999,
-    image: require("../assets/jacket.jpg"),
-  },
-  {
-    id: 2,
-    title: "Couch in Great Condition",
-    price: 9999,
-    image: require("../assets/couch.jpg"),
   },
 ];
 
 const ListingsScreen = (props) => {
-  console.log(props.navigation);
+  const [listings, setListings] = useState([]);
+  const [error, seterror] = useState(false);
+  const [refresh, setRefresh] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    loadListing();
+  }, []);
+
+  const loadListing = async () => {
+    setLoading(true);
+    const response = await listingApi.getListings();
+    setLoading(false);
+    if (!response.ok) return seterror(true);
+    seterror(false);
+    setListings(response.data);
+  };
 
   return (
     <Screen style={styles.screen} type="listScreen">
+      {error && (
+        <>
+          <FlatList
+            data={initialMessages}
+            keyExtractor={(data) => data.id.toString()}
+            renderItem={() => {
+              return (
+                <>
+                  <Text style={styles.error}>
+                    We Couldn't Retrive the Listing
+                  </Text>
+                  <Text style={styles.error}>Please Pull to refresh</Text>
+                </>
+              );
+            }}
+            refreshing={refresh}
+            onRefresh={() => {
+              loadListing();
+            }}
+            style={{ height: "100%" }}
+          />
+        </>
+      )}
+      <ActivityIndicator visible={loading} />
       <FlatList
         style={styles.flatList}
         showsVerticalScrollIndicator={false}
@@ -31,7 +65,7 @@ const ListingsScreen = (props) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Card
-            image={item.image}
+            image={item.images[0].url}
             title={item.title}
             subTitle={"INR " + item.price}
             cardPressed={() =>
@@ -52,6 +86,13 @@ const styles = StyleSheet.create({
   },
   flatList: {
     paddingTop: 10,
+  },
+  error: {
+    fontSize: 18,
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
   },
 });
 

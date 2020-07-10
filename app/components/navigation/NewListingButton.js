@@ -9,7 +9,7 @@ const NewListingButton = (props) => {
       <View style={styles.container}>
         <MaterialCommunityIcons
           name="plus-circle"
-          size={40}
+          size={50}
           color={colors.white}
         />
       </View>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     bottom: 40,
     borderColor: colors.white,
-    borderWidth: 10,
+    borderWidth: 5,
     alignItems: "center",
     justifyContent: "center",
   },
