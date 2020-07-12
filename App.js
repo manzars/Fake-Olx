@@ -9,11 +9,12 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AuthNavigator from "./app/components/navigation/AuthNavigation";
 import navigationTheme from "./app/components/navigation/navigationTheme";
 import AppNavigator from "./app/components/navigation/AppNavigator";
+import TestingImg from "./app/components/TestingImg";
 
 export default function App() {
-  return (
-    <NavigationContainer theme={navigationTheme}>
-      <AppNavigator />
-    </NavigationContainer>
-  );
+  return <TestingImg />;
 }
+
+// <NavigationContainer theme={navigationTheme}>
+//       <AppNavigator />
+//     </NavigationContainer>

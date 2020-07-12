@@ -6,6 +6,7 @@ import colors from "../config/colors";
 import ActivityIndicator from "../components/ActivityIndicator";
 
 import listingApi from "../api/listings";
+import useApi from "../hooks/useApi";
 
 const initialMessages = [
   {
@@ -14,27 +15,23 @@ const initialMessages = [
 ];
 
 const ListingsScreen = (props) => {
-  const [listings, setListings] = useState([]);
-  const [error, seterror] = useState(false);
   const [refresh, setRefresh] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const getListingsApi = useApi(listingApi.getListings);
 
   useEffect(() => {
-    loadListing();
+    getListingsApi.request();
   }, []);
 
-  const loadListing = async () => {
-    setLoading(true);
-    const response = await listingApi.getListings();
-    setLoading(false);
-    if (!response.ok) return seterror(true);
-    seterror(false);
-    setListings(response.data);
-  };
+  const fetchedData = [];
+  for (let key in getListingsApi.data) {
+    fetchedData.push({
+      ...getListingsApi.data[key],
+    });
+  }
 
   return (
     <Screen style={styles.screen} type="listScreen">
-      {error && (
+      {getListingsApi.error && (
         <>
           <FlatList
             data={initialMessages}
@@ -51,17 +48,17 @@ const ListingsScreen = (props) => {
             }}
             refreshing={refresh}
             onRefresh={() => {
-              loadListing();
+              getListingsApi.request();
             }}
             style={{ height: "100%" }}
           />
         </>
       )}
-      <ActivityIndicator visible={loading} />
+      <ActivityIndicator visible={getListingsApi.loading} />
       <FlatList
         style={styles.flatList}
         showsVerticalScrollIndicator={false}
-        data={listings}
+        data={fetchedData}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Card

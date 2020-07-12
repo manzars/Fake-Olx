@@ -33,7 +33,6 @@ const ImageInput = (props) => {
   };
 
   const imageClicked = () => {
-    console.log("Manzar");
     if (!props.imageURI) {
       selectImage();
     } else {
