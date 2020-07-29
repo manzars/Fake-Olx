@@ -1,5 +1,6 @@
-import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import { Image } from "react-native-expo-image-cache";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
@@ -8,7 +9,12 @@ function Card(props) {
   return (
     <TouchableOpacity onPress={props.cardPressed}>
       <View style={styles.card}>
-        <Image style={styles.image} source={{ uri: props.image }} />
+        <Image
+          style={styles.image}
+          tint="light"
+          preview={{ uri: props.thumbnail }}
+          uri={props.image}
+        />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{props.title}</AppText>
           <AppText style={styles.subTitle}>{props.subTitle}</AppText>

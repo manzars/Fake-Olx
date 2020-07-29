@@ -35,7 +35,12 @@ const TestingImg = () => {
     selectImage();
   };
 
-  const setUpload = () => {
+  const setUploadOne = async () => {
+    await setUpload();
+    console.log("manzar");
+  };
+
+  const setUpload = async () => {
     const proto = {
       uri: image,
       type: `image/${image.split(".")[1]}`,
@@ -47,7 +52,7 @@ const TestingImg = () => {
     data.append("upload_preset", "fake-olx");
     data.append("cloud_name", "manzar");
 
-    fetch("https://api.cloudinary.com/v1_1/manzar/image/upload", {
+    await fetch("https://api.cloudinary.com/v1_1/manzar/image/upload", {
       method: "post",
       body: data,
     })
@@ -62,7 +67,7 @@ const TestingImg = () => {
           <MaterialCommunityIcons name="camera" size={40} color="#000" />
         </View>
       </TouchableWithoutFeedback>
-      <Button title="Press" onPress={setUpload} />
+      <Button title="Press" onPress={setUploadOne} />
     </SafeAreaView>
   );
 };

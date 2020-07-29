@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, Platform } from "react-native";
+import React, { useContext } from "react";
+import { View, StyleSheet, Platform, Alert } from "react-native";
 
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
@@ -7,6 +7,8 @@ import Screen from "../components/Screen";
 import { FlatList } from "react-native-gesture-handler";
 import Icon from "../components/Icon";
 import ListItemSeperator from "../components/ListItemSeperator";
+import AuthContext from "../auth/context";
+import authStorage from "../auth/authStorage";
 
 const menuItems = [
   {
@@ -27,16 +29,31 @@ const menuItems = [
 ];
 
 const AccountScreen = (props) => {
+  const { user, setUser, name, setName } = useContext(AuthContext);
+
   let noPadding = false;
   if (Platform.OS === "android") {
     noPadding = true;
   }
+
+  const handleLogout = () => {
+    setUser((state) => null);
+    authStorage.removeToken();
+    setName((state) => null);
+  };
+
+  const handleClick = () => {
+    Alert.alert("Logout", "Are you sure!", [
+      { text: "Yes", onPress: handleLogout },
+      { text: "No" },
+    ]);
+  };
   return (
     <Screen style={styles.screen} noPadding={noPadding}>
       <View style={styles.container}>
         <ListItem
-          title="Manzar Shaikh"
-          subTitle="manzarshaikh69@gmail.com"
+          title={name}
+          subTitle={user.email}
           image={require("../assets/manzar.jpg")}
         />
       </View>
@@ -63,6 +80,7 @@ const AccountScreen = (props) => {
         <ListItem
           title="Logout"
           IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+          click={handleClick}
         />
       </View>
     </Screen>

@@ -1,15 +1,26 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
+import { Image } from "react-native-expo-image-cache";
 
 const ListingDetailsScreen = (props) => {
   const listing = props.route.params;
-  console.log("manzar", listing);
+  let imageUrl = undefined;
+  if (listing.images[0].url.length > 20) {
+    imageUrl = listing.images[0].url;
+  } else {
+    imageUrl = listing.images[0].url[0];
+  }
   return (
     <View>
-      <Image style={styles.image} source={{ uri: listing.images[0].url }} />
+      <Image
+        style={styles.image}
+        uri={imageUrl}
+        preview={{ uri: listing.images[0].thumbnailUrl }}
+        tint="light"
+      />
       <View style={styles.container}>
         <AppText style={styles.title}>{listing.title}</AppText>
         <AppText style={styles.price}>{"INR " + listing.price}</AppText>

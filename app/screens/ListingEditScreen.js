@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 import colors from "../config/colors";
@@ -11,6 +11,9 @@ import AppFormPicker from "../components/AppFormPicker";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import FormImagePicker from "../components/FormImagePicker";
 import useLocation from "../hooks/useLocation";
+import listingsApi from "../api/listings";
+import axios from "axios";
+import UploadScreen from "../screens/UploadScreen";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -77,11 +80,83 @@ const categories = [
   },
 ];
 
+const xyz = [1, 2, 3];
+
 function ListingEditScreen() {
+  useEffect(() => {
+    if (
+      noOfImage === imageUrl.length &&
+      noOfImage !== 0 &&
+      imageUrl.length !== 0
+    ) {
+      setImageUrl([]);
+      setNoOfImage(0);
+      callApi();
+    }
+  });
+
+  const [noOfImage, setNoOfImage] = useState(0);
+  const [imageUrl, setImageUrl] = useState([]);
+  const [listings, setListings] = useState({});
+  const [uploadVisible, setUploadVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
   const location = useLocation();
+
+  const callApi = async () => {
+    const result = await listingsApi.addListing(
+      {
+        ...listings,
+        location,
+        imageUrl,
+      },
+      (progress) => setProgress(progress)
+    );
+    if (!result.ok) {
+      setUploadVisible(false);
+      return alert("could not save the listings");
+    }
+  };
+
+  const setUpload = async (image, index) => {
+    const proto = {
+      uri: image,
+      type: `image/${image.split(".")[1]}`,
+      name: `image${index}.${image.split(".")[1]}`,
+    };
+    const data = new FormData();
+    data.append("file", proto);
+    data.append("upload_preset", "fake-olx");
+    data.append("cloud_name", "manzar");
+
+    axios
+      .request({
+        url: "https://api.cloudinary.com/v1_1/manzar/image/upload",
+        method: "post",
+        data: data,
+      })
+      .then((res) => {
+        setImageUrl((state) => state.concat(res.data.url));
+      });
+  };
+
+  const handleSubmit = (listing, { resetForm }) => {
+    setProgress(0);
+    setUploadVisible(true);
+    setListings((state) => listing);
+    setNoOfImage((state) => state + listing.images.length);
+    listing.images.forEach((image, index) => {
+      setUpload(image, index);
+    });
+    resetForm();
+  };
 
   return (
     <Screen style={styles.container}>
+      <UploadScreen
+        onDone={() => setUploadVisible(false)}
+        progress={progress}
+        visible={uploadVisible}
+      />
       <AppForm
         initialValues={{
           title: "",
@@ -90,7 +165,7 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images" />

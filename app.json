@@ -4,11 +4,11 @@
     "slug": "fakeOlx",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/manzar.jpg",
+    "icon": "./app/assets/logo-red.png",
     "splash": {
-      "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./app/assets/splashScreen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#e63c4b"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -16,6 +16,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.manzars.fakeOlx",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
