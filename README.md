@@ -38,4 +38,11 @@
     <td valign="top"><p><b>Location Permission</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/location%20permission.jpg" width=100% height=100%></td>
   </tr>
 </table>
-<p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=25% height=25%>
+<table>
+  <tr>
+    <td valign="top"><p><b>Delete Image</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/delete%20image.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Upload Done</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/done.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Notification</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/notification.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Firebase Result</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/firebase.jpg" width=100% height=100%></td>
+  </tr>
+</table>
