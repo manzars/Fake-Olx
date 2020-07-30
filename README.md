@@ -26,7 +26,7 @@ Splash Screen
 
 <table>
   <tr>
-    <td valign="top"><p>manzar</p><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&show_icons=true&title_color=ffffff&icon_color=34abeb&text_color=daf7dc&bg_color=151515"/></td>
-    <td valign="top"><p>manzar</p><img src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&title_color=ffffff&icon_color=34abeb&text_color=daf7dc&bg_color=151515"/></td>
+    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
+    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
   </tr>
 </table>
