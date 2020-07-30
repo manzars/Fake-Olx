@@ -1,5 +1,5 @@
 # FakeOlx - Sell What You Don't Need. 
-###React Native App (Android/IOS)
+### React Native App (Android/IOS)
 
 * Simple App made by Expo
 * Having Features of uploading Image
