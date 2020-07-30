@@ -1,6 +1,7 @@
 # FakeOlx - Sell What You Don't Need. 
 ### React Native App (Android/IOS)
 
+#### App Features
 * Simple App made by Expo
 * Having Features of uploading Image
 * usage of Location
@@ -10,7 +11,7 @@
 * Beautiful Animations
 * Push Notification Features
 
-## App Screens
+#### App Screens
 
 <table>
   <tr>
