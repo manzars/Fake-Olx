@@ -32,10 +32,10 @@
 </table>
 <table>
   <tr>
-    <td valign="top"><p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
-    <td valign="top"><p><b>Getting Started</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/get%20started.jpg" width=100% height=100%></td>
-    <td valign="top"><p><b>Login Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/login.jpg" width=100% height=100%></td>
-    <td valign="top"><p><b>Register Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/register.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Post Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/post.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Category List</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/category%20list.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Image Permission</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/image%20permission.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Location Permission</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/location%20permission.jpg" width=100% height=100%></td>
   </tr>
 </table>
 <p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=25% height=25%>
