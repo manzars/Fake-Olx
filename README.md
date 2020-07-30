@@ -48,4 +48,4 @@
 
 ## Wish to Download the App?
 [Click here Download FakeOlx.apk](https://drive.google.com/file/d/1YA-ey-IcLhDjoJYMJb_SfwxlWIojO6ic/view?usp=sharing "FakeOlx")
-<p><b>*NOTE: This app may contains Bugs, Download at your own risk. I'm not Responsible for any DAMAGE to our device.</></p>
+<p style="background-color:powderblue;"><b>*NOTE: This app may contains Bugs, Download at your own risk. I'm not Responsible for any DAMAGE to our device.</></p>
