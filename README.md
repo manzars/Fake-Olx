@@ -38,8 +38,4 @@
     <td valign="top"><p><b>Register Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/register.jpg" width=100% height=100%></td>
   </tr>
 </table>
-<table>
-  <tr>
-    <td valign="top"><p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=25% height=25%></td>
-  </tr>
-</table>
+<p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=25% height=25%>
