@@ -1,7 +1,7 @@
 # FakeOlx - Sell What You Don't Need. 
-### React Native App (Android/IOS)
+## React Native App (Android/IOS)
 
-#### App Features
+### App Features
 * Simple App made by Expo
 * Having Features of uploading Image
 * usage of Location
@@ -11,7 +11,7 @@
 * Beautiful Animations
 * Push Notification Features
 
-#### App Screens
+### App Screens
 
 <table>
   <tr>
@@ -45,3 +45,5 @@
     <td valign="top"><p><b>Firebase Result</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/firebase.jpg" width=100% height=100%></td>
   </tr>
 </table>
+
+### Wish to Download the App?
