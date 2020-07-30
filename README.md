@@ -13,3 +13,7 @@
 - hello world
 @@ - text in purple (and bold)@@
 ```
+
+
+Splash Screen
+![Splash Screen](https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg "Splash Screen")
