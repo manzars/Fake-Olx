@@ -17,3 +17,6 @@
 
 Splash Screen
 ![Splash Screen](https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg "Splash Screen" =250x250)
+
+
+<img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=50% height=50%>
