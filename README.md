@@ -28,5 +28,8 @@ Splash Screen
   <tr>
     <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
     <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
+    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
+    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
+    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%></td>
   </tr>
 </table>
