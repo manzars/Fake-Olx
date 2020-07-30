@@ -9,4 +9,4 @@
 * Light Weight App
 * Beautiful Animations
 * Push Notification Features
-![#f03c15] manzar`#f03c15`
+<a><img src="http://dump.thecybershadow.net/6c736bfd11ded8cdc5e2bda009a6694a/colortext.svg"/></a>
