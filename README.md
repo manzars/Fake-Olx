@@ -14,21 +14,11 @@
 @@ - text in purple (and bold)@@
 ```
 
-
-Splash Screen
-![Splash Screen](https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg "Splash Screen" =250x250)
-
-#### Splash Screen
-<img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%>
-
-#### Account Screen
-<img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%>
-
 <table>
   <tr>
-    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
     <td valign="top"><p><b>manzar</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
-    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
-    <td valign="top"><p>manzar</p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>manzar</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>manzar</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
   </tr>
 </table>
