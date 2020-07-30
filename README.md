@@ -10,7 +10,7 @@
 * Beautiful Animations
 * Push Notification Features
 ```diff
-- text in red
+- hello world
 + text in green
 ! text in orange
 # text in gray
