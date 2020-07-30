@@ -18,5 +18,8 @@
 Splash Screen
 ![Splash Screen](https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg "Splash Screen" =250x250)
 
+#### Splash Screen
+<img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%>
 
+#### Account Screen
 <img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=20% height=20%>
