@@ -1,1 +1,3 @@
-# FakeOlx - React Native App (Android/IOS)
+# FakeOlx
+
+React Native App (Android/IOS)
