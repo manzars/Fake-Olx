@@ -16,7 +16,7 @@
 
 <table>
   <tr>
-    <td valign="top"><p><b>Splash Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=100% height=100%></td>
+    <td valign="top"><p><b>App Opening Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/splash%20page.jpg" width=125% height=125%></td>
     <td valign="top"><p><b>Getting Started</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/get%20started.jpg" width=100% height=100%></td>
     <td valign="top"><p><b>Login Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/login.jpg" width=100% height=100%></td>
     <td valign="top"><p><b>Register Screen</b></p><img src="https://github.com/manzars/Fake-Olx/blob/master/Images/register.jpg" width=100% height=100%></td>
