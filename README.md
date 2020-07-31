@@ -1,6 +1,6 @@
 # FakeOlx - Sell What You Don't Need. 
 React Native App (Android/IOS) for selling and buying used product all over the world.
-created using Expo and used firebase as a backend also used cloudinary for cloud storage.
+created using Expo on top of react-native and used firebase as a backend also used cloudinary for cloud storage.
 App may contain bugs as it is in first release till now.
 
 ## App Features
@@ -10,8 +10,10 @@ App may contain bugs as it is in first release till now.
 * Authentication using Firebase
 * Cloud repository of Cloudinary
 * Light Weight App
+* Pull to Refresh
 * Beautiful Animations
 * Push Notification Features
+* And Many More
 
 ## App Screens
 
